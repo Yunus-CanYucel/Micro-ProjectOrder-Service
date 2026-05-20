@@ -9,7 +9,7 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>org.example</groupId>
-    <artifactId>Micro-ProjectOrder-Service</artifactId>
+    <artifactId>Micro-Project-Order-Service</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <name>Micro-ProjectOrder-Service</name>
     <description>Micro-ProjectOrder-Service</description>
