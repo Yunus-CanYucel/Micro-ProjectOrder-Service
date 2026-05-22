@@ -1,12 +1,10 @@
-package org.example.microprojectorderservice.dto;
+package se.iths.yunuscan.microprojectorderservice.dto;
 
 
 import lombok.*;
 
 @Getter
 @Setter
-@NoArgsConstructor
-@AllArgsConstructor
 public class CreateOrderItemRequests {
 
     private Long productId;
