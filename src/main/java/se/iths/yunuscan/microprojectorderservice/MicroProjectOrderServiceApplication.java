@@ -1,4 +1,4 @@
-package org.example.microprojectorderservice;
+package se.iths.yunuscan.microprojectorderservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

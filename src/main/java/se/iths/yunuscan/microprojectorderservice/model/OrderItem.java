@@ -1,4 +1,4 @@
-package org.example.microprojectorderservice.model;
+package se.iths.yunuscan.microprojectorderservice.model;
 
 import jakarta.persistence.*;
 
@@ -14,11 +14,8 @@ public class OrderItem {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     private String name;
-
+    private Long id;
     private BigDecimal price;
-
-    private int quantity;
+    private int stock;
 }

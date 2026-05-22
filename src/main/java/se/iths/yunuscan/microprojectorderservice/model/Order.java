@@ -1,4 +1,4 @@
-package org.example.microprojectorderservice.model;
+package se.iths.yunuscan.microprojectorderservice.model;
 
 
 
@@ -8,10 +8,12 @@ import jakarta.persistence.GenerationType;
 import lombok.*;
 
 
+import java.math.BigDecimal;
 import java.time.LocalDateTime;
 import java.util.List;
 
 @Entity
+@Table(name = "orders")
 @Getter
 @Setter
 public class Order {
@@ -22,7 +24,7 @@ public class Order {
 
     private LocalDateTime orderDate;
     private String username;
-    private double totalPrice;
+    private BigDecimal totalPrice;
 
     @OneToMany(cascade = CascadeType.ALL)
     private List<OrderItem> orderItems;
