@@ -8,6 +8,7 @@ import java.util.List;
 @Getter
 @Setter
 
-public class CreateOrderRequest {
-    private List<CreateOrderItemRequests> item;
+public class CreateOrderRequestDTO {
+    private List<CreateOrderItemRequestsDTO> item;
+
 }
