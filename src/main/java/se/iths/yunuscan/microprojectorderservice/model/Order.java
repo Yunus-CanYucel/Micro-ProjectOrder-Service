@@ -10,12 +10,15 @@ import lombok.*;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
-@Entity
-@Table(name = "orders")
+
 @Getter
 @Setter
+@Entity
+@Table(name = "orders")
+
 public class Order {
 
     @Id
@@ -24,8 +27,8 @@ public class Order {
 
     private LocalDateTime orderDate;
     private String username;
-    private BigDecimal totalPrice;
+    private BigDecimal totalPrice = BigDecimal.ZERO;
 
     @OneToMany(cascade = CascadeType.ALL)
-    private List<OrderItem> orderItems;
+    private List<OrderItem> orderItems = new ArrayList<>();
 }
