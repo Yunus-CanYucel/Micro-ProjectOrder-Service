@@ -1,24 +1,34 @@
 package se.iths.yunuscan.microprojectorderservice.config;
 
 
-import ch.qos.logback.classic.pattern.MessageConverter;
+import org.springframework.amqp.rabbit.connection.ConnectionFactory;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
+import org.springframework.amqp.support.converter.JacksonJsonMessageConverter;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.amqp.core.Queue;
 
 
-import java.util.Queue;
 
 @Configuration
 public class RabbitMQConfig {
 
-    private static final String ORDER_QUEUE_NAME = "que-confirmation";
+    @Value("${RABBITMQ_QUEUE:order-email-queue}")
+    private String orderEmailQueueName;
     @Bean
-    public Queue orderQueue() {
-        return new Queue(ORDER_QUEUE_NAME, true);
+    public Queue orderEmailQueue() {
+        return new Queue(orderEmailQueueName, true);
     }
 
     @Bean
-    public MessageConverter messageConverter() {
-        return new JacksonjsonMessageConverter();
+    public JacksonJsonMessageConverter messageConverter() {
+        return new JacksonJsonMessageConverter();
+    }
+
+    public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory){
+        RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
+        rabbitTemplate.setMessageConverter(messageConverter());
+        return rabbitTemplate;
     }
 }
