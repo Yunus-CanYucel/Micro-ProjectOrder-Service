@@ -8,7 +8,7 @@ import jakarta.validation.constraints.NotNull;
 public record CreateOrderItemRequestsDTO(
 
         @NotNull
-        Long productID,
+        Long productId,
         @Min(1)
         int quantity
 ){}

@@ -14,7 +14,7 @@ import org.springframework.amqp.core.Queue;
 @Configuration
 public class RabbitMQConfig {
 
-    @Value("${RABBITMQ_QUEUE:order-email-queue}")
+    @Value("${RABBITMQ_QUEUE:confirmation-queue}")
     private String orderEmailQueueName;
     @Bean
     public Queue orderEmailQueue() {
@@ -25,7 +25,7 @@ public class RabbitMQConfig {
     public JacksonJsonMessageConverter messageConverter() {
         return new JacksonJsonMessageConverter();
     }
-
+    @Bean
     public RabbitTemplate rabbitTemplate(ConnectionFactory connectionFactory){
         RabbitTemplate rabbitTemplate = new RabbitTemplate(connectionFactory);
         rabbitTemplate.setMessageConverter(messageConverter());

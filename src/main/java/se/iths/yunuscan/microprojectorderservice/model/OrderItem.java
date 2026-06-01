@@ -20,5 +20,8 @@ public class OrderItem {
     private int quantity;
     private BigDecimal totalPrice;
 
+    @ManyToOne
+    @JoinColumn(name= "order_id")
+    private Order order;
 
 }

@@ -25,8 +25,8 @@ public class OpenAPIConfig {
                                 "2. Click 'Authorize' button and enter: 'Bearer <your-token>'\n"+
                                 "3. Then you can test the endpoints.")
                         .contact(new Contact()
-                                .name("")
-                                .email("")))
+                                .name("Yunus")
+                                .email("example@examplemail.com")))
                 .addSecurityItem(new SecurityRequirement().addList("bearerAuth"))
                 .components(new Components()
                         .addSecuritySchemes("bearerAuth",

@@ -1,11 +1,8 @@
 package se.iths.yunuscan.microprojectorderservice.config;
 
 
-
-
+import org.springframework.context.annotation.Configuration;
 
 @Configuration
-@Enable
-
 public class SecurityConfig {
 }
