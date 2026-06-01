@@ -17,5 +17,11 @@ public class OrderItem {
     private String name;
     private Long id;
     private BigDecimal price;
-    private int stock;
+    private int quantity;
+    private BigDecimal totalPrice;
+
+    @ManyToOne
+    @JoinColumn(name= "order_id")
+    private Order order;
+
 }

@@ -1,14 +1,14 @@
 package se.iths.yunuscan.microprojectorderservice.dto;
 
-import lombok.*;
+import jakarta.validation.*;
+import jakarta.validation.constraints.*;
+
 
 import java.util.List;
 
 
-@Getter
-@Setter
 
-public class CreateOrderRequestDTO {
-    private List<CreateOrderItemRequestsDTO> item;
-
-}
+public record CreateOrderRequestDTO(
+        @NotEmpty
+        List<@Valid CreateOrderItemRequestsDTO> items
+){}

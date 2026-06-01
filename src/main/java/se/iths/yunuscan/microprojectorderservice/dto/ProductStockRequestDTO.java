@@ -1,12 +1,12 @@
 package se.iths.yunuscan.microprojectorderservice.dto;
 
 
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
-
-
-
-public class ProductStockRequestDTO {
-    private Long productId;
-    private int stock;
-
-}
+public record ProductStockRequestDTO(
+        @NotNull
+        Long productId,
+        @Min(1)
+        int quantity
+){}

@@ -1,12 +1,14 @@
 package se.iths.yunuscan.microprojectorderservice.dto;
 
 
-import lombok.*;
+import jakarta.validation.constraints.Min;
+import jakarta.validation.constraints.NotNull;
 
-@Getter
-@Setter
-public class CreateOrderItemRequestsDTO{
 
-    private Long productId;
-    private int quantity;
-}
+public record CreateOrderItemRequestsDTO(
+
+        @NotNull
+        Long productId,
+        @Min(1)
+        int quantity
+){}
