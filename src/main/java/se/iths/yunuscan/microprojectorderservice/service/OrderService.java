@@ -69,10 +69,10 @@ public class OrderService {
             orderItem.setQuantity(stockResponse.requestedQuantity());
             orderItem.setOrder(order);
 
-            order.getOrderItems().add(orderItem);
-
             BigDecimal itemTotal = stockResponse.price()
                     .multiply(BigDecimal.valueOf(stockResponse.requestedQuantity()));
+
+            order.getOrderItems().add(orderItem);
 
             order.setTotalPrice(order.getTotalPrice().add(itemTotal));
         }
