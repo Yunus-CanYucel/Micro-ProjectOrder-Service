@@ -14,7 +14,7 @@ import org.springframework.amqp.core.Queue;
 @Configuration
 public class RabbitMQConfig {
 
-    @Value("${RABBITMQ_QUEUE:confirmation-queue}")
+    @Value("${RABBITMQ_QUEUE}")
     private String orderEmailQueueName;
     @Bean
     public Queue orderEmailQueue() {
