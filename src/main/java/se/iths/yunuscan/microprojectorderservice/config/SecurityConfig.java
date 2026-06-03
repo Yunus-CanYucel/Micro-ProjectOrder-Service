@@ -67,6 +67,7 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/error").permitAll()
                         .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
+                        .requestMatchers("/test/").permitAll()
                         .requestMatchers(HttpMethod.POST, "/orders").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/orders/my-orders").hasRole("USER")
                         .anyRequest().authenticated()

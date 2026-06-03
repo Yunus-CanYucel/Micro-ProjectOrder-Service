@@ -26,7 +26,7 @@ public class OrderService {
     private final ProductClient productClient;
     private final RabbitTemplate rabbitTemplate;
 
-    @Value("${RABBITMQ_QUEUE:confirmation-queue}")
+    @Value("${RABBITMQ_QUEUE}")
     private String orderEmailQueueName;
 
     public OrderResponseDTO createOrder(CreateOrderRequestDTO request, Jwt jwt) {
