@@ -19,7 +19,7 @@ public class ProductTestController {
 
     private final ProductClient productClient;
 
-    @PostMapping("/product/stock-decrease")
+    @PostMapping("/products/stock/decrease")
     public ResponseEntity<List<ProductStockResponseDTO>> testStockDecrease(
             @Valid @RequestBody List<ProductStockRequestDTO> requests,
             @AuthenticationPrincipal Jwt jwt
