@@ -21,7 +21,7 @@ import java.util.List;
 @EnableWebSecurity
 public class SecurityConfig {
 
-    @Value("${AUTH_SERVER_URL:http://localhost:8080}")
+    @Value("${AUTH_SERVICE_BASE_URL:http://localhost:8080}")
     private String authServerUrl;
 
     @Bean
