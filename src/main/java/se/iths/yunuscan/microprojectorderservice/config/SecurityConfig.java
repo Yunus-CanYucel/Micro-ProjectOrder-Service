@@ -20,6 +20,8 @@ import java.util.List;
 import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
+import se.iths.yunuscan.microprojectorderservice.security.CookieBearerTokenResolver;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
@@ -71,16 +73,23 @@ public class SecurityConfig {
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .requestMatchers("/error").permitAll()
-                        .requestMatchers("/swagger-ui/**", "/swagger-ui.html", "/v3/api-docs/**").permitAll()
+                        .requestMatchers(
+                                "/swagger-ui/**",
+                                "/swagger-ui.html",
+                                "/v3/api-docs/**"
+                        ).permitAll()
                         .requestMatchers("/test/").permitAll()
                         .requestMatchers(HttpMethod.POST, "/orders").hasRole("USER")
                         .requestMatchers(HttpMethod.GET, "/orders/my-orders").hasRole("USER")
                         .anyRequest().authenticated()
                 )
-                .oauth2ResourceServer(oauth2 -> oauth2.jwt(jwt ->
-                        jwt.decoder(jwtDecoder)
+                .oauth2ResourceServer(oauth2 -> oauth2
+                        .bearerTokenResolver(new CookieBearerTokenResolver())
+                        .jwt(jwt -> jwt
+                                .decoder(jwtDecoder)
                                 .jwtAuthenticationConverter(jwtAuthenticationConverter)
-                ))
+                        )
+                )
                 .build();
     }
     @Bean
