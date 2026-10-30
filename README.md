@@ -9,7 +9,9 @@ and then creates an order confirmation request to the mail service
 * [Responsibilities](#responsibilities)
 * [System Overview](#system-overview)
 * [Technologies](#technologies)
-* [Database](#Database)
+* [Database](#database)
+* [Port](#port)
+* [Environment variables](#environment-variables)
 
 
 
@@ -88,6 +90,18 @@ jdbc:h2:file:./data/orderdb
 The database contains 2 main entities
 * orders
 * order_items
+
+## Port
+
+The service listens on port **8082** by default. Set `PORT` in your env.var to use a
+different port.
+
+## Environment variables
+
+
+
+
+
 
 
 
