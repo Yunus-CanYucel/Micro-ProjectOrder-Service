@@ -2,12 +2,18 @@
 
 The order service is part of the webshop backend that creates orders, stores orders, 
 communicates with product service for what products has been bought
-and send order confirmation to show what products has been brought via the Mail Service
+and then creates an order confirmation request to the mail service
 
 ## Contents
 
 * [Responsibilities](#responsibilities)
 * [System Overview](#system-overview)
+* [Technologies](#technologies)
+* [Database](#Database)
+
+
+
+
 
 
 # Responsibilities
@@ -46,8 +52,29 @@ It does not manage products or stock directly. That belongs to the Product Servi
 
 The Front end should be calling the backend through gateway not directly
 
+when an order is created it communicates with the product service
+to decrease the ordered products
 
+# Technologies
 
+| Area                             | Technology                                       |
+|----------------------------------|--------------------------------------------------|
+| Language                         | Java 17                                          |
+| Framework                        | Spring Boot 4.0.6                                |
+| REST API                         | Spring Web                                       |
+| Authentication and authorization | Spring Security                                  |
+| JWT validation                   | Spring Security OAuth2 Resource Server           |
+| Persistence                      | Spring Data JPA                                  |
+| Database                         | H2 in memory database                            |
+| API documentation                | Springdoc OpenAPI 3.0.2                          |
+| Object mapping                   | Manual mapping in service code                   |
+| Boilerplate reduction            | Lombok                                           |
+| Build tool                       | Maven / Maven Wrapper                            |
+| Testing                          | JUnit, Spring Boot Test and Spring Security Test |
+| Container                        | Docker                                           |
+| CI                               | Github Actions                                   |
+
+# Database
 
 
 
