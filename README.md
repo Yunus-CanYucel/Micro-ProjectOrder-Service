@@ -75,6 +75,9 @@ to decrease the ordered products
 | CI                               | Github Actions                                   |
 
 ## Database
+It uses H2 in memory 
+spring.datasource.url
+look in [application.properties](src/main/resources/application.properties) for exact value
 
 
 
