@@ -115,5 +115,41 @@ RabbitMQ SSL is enabled in the current configuration.
 
 ## Running the application locally
 
+### Prerequisites
+* Java 17
+* Maven or Maven Wrapper
+* Auth Service Running
+* Product Service running
+* RabbitMQ running
+* Required environment variables configured
+
+### Start the application
+Set the database variables, then run the command in the project's root folder.
+
+Windows PowerShell:
+
+```
+$env:RABBITMQ_HOST="your-rabbitmq-host"
+$env:RABBITMQ_PORT="5671"
+$env:RABBITMQ_USERNAME="your-username"
+$env:RABBITMQ_PASSWORD="your-password"
+$env:RABBITMQ_VHOST="your-vhost"
+```
+
+macOS and Linux:
+```
+export RABBITMQ_HOST="your-rabbitmq-host"
+export RABBITMQ_PORT="5671"
+export RABBITMQ_USERNAME="your-username"
+export RABBITMQ_PASSWORD="your-password"
+export RABBITMQ_VHOST="your-vhost"
+```
+
+
+
+
+
+
+
 
 
