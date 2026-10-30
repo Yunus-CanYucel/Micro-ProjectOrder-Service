@@ -16,7 +16,7 @@ and then creates an order confirmation request to the mail service
 
 
 
-# Responsibilities
+## Responsibilities
 
 The Order Service is responsibile for the following=
 
@@ -29,7 +29,7 @@ The Order Service is responsibile for the following=
 
 It does not manage products or stock directly. That belongs to the Product Service. It also does not handle login or issue JWTs. That belongs to the Auth Service.
 
-# System Overview
+## System Overview
 
 ```
 +----------+       +---------+       +-------------------+
@@ -55,7 +55,7 @@ The Front end should be calling the backend through gateway not directly
 when an order is created it communicates with the product service
 to decrease the ordered products
 
-# Technologies
+## Technologies
 
 | Area                             | Technology                                       |
 |----------------------------------|--------------------------------------------------|
@@ -74,7 +74,7 @@ to decrease the ordered products
 | Container                        | Docker                                           |
 | CI                               | Github Actions                                   |
 
-# Database
+## Database
 
 
 
