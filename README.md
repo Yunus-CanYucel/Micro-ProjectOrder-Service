@@ -12,6 +12,7 @@ and then creates an order confirmation request to the mail service
 * [Database](#database)
 * [Port](#port)
 * [Environment variables](#environment-variables)
+* [Running the application locally](#running-the-application-locally)
 
 
 
@@ -109,6 +110,10 @@ different port.
 |RABBITMQ_PASSWORD|none|Yes|Rabbit mq password|
 |RABBITMQ_VHOST|none|Yes|Rabbitmq Virtual host|
 |QUEUE_NAME|orderEmailQueue|no|queue used for order confirmation messages|
+
+RabbitMQ SSL is enabled in the current configuration.
+
+## Running the application locally
 
 
 
