@@ -98,10 +98,17 @@ different port.
 
 ## Environment variables
 
-
-
-
-
+|Variable|Default|required|Description|
+|---|---|---|---|
+|PORT|8082|no|Oder-service-port|
+|PRODUCT_SERVICE_BASE_URL|8081|No|listening there for product service|
+|AUTH_SERVICE_BASE_URL|8080|No|listening there for auth service|
+|RABBITMQ_HOST|none|Yes|Rabbitmq host|
+|RABBITMQ_PORT|none|Yes|Rabbitmq port|
+|RABBITMQ_USERNAME|none|Yes|Rabbit mq username|
+|RABBITMQ_PASSWORD|none|Yes|Rabbit mq password|
+|RABBITMQ_VHOST|none|Yes|Rabbitmq Virtual host|
+|QUEUE_NAME|orderEmailQueue|no|queue used for order confirmation messages|
 
 
 
