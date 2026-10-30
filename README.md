@@ -79,5 +79,15 @@ It uses H2 in memory
 spring.datasource.url
 look in [application.properties](src/main/resources/application.properties) for exact value
 
+H2 in memory doesnt save orders directly to disc and only stays as long as the service never shuts down. Is done like this so that during making of project doesnt fill up the computer. 
+
+if you want the old orders to stay in between restarts change value of spring.data source.url to
+`
+jdbc:h2:file:./data/orderdb
+`
+The database contains 2 main entities
+* orders
+* order_items
+
 
 
